@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+ 
 
-Route::get('/', function () {
-    return view('login');
-});
+Route::get('/','RedirectController@admin_login')->name('admin_login');
+Route::get('/admin','RedirectController@admin_index')->name('admin_index');

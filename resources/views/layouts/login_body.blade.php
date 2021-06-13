@@ -7,7 +7,7 @@
                      <h5 style="text-align:center" class="text-primary">Login to</h5><br>
                          <h5  class="text-center text-primary">VMR Diagnostic Lab</h5><br>
                          
-                         <img style="margin-left:43%;max-height:50px;max-width:50px;text-align:center" src="{{asset('images/circle-cropped.png')}}" alt="">
+                         <img style="margin-left:43%;max-height:50px;max-width:50px;text-align:center" src="{{asset('public/images/circle-cropped.png')}}" alt="">
                      </div>
                      <form> 
                          <div class="input-group custom">
@@ -29,7 +29,7 @@
 											use code for form submit
 											<input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In">
 										-->
-                                     <a class="btn btn-primary btn-lg btn-block" href="index.html">Sign In</a>
+                                     <a class="btn btn-primary btn-lg btn-block" href="{{route('admin_index')}}">Sign In</a>
                                  </div> 
                              </div>
                          </div>
