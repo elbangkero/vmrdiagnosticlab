@@ -12,6 +12,9 @@ class RedirectController extends Controller
     public function admin_login(){
         return view('login');
     }
+    public function add_patient(){
+        return view('admin.add_patient');
+    }
 
     
 }

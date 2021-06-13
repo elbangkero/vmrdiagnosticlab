@@ -19,3 +19,4 @@
 	<script src="{{asset('public/plugins/datatables/js/vfs_fonts.js')}}"></script>
 	<!-- Datatable Setting js -->
 	<script src="{{asset('public/js/datatable-setting.js')}}"></script></body>
+ 
