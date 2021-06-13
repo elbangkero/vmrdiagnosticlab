@@ -3,12 +3,11 @@
 <head>
 	<!-- Basic Page Info -->
 	<meta charset="utf-8">
-	<title>DeskApp - Bootstrap Admin Dashboard HTML Template</title>
+	<title>VMR Diagnostic Lab</title>
 
 	<!-- Site favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="{{asset('public/images/apple-touch-icon.png')}}">
-	<link rel="icon" type="image/png" sizes="32x32" href="{{asset('public/images/favicon-32x32.png')}}">
-	<link rel="icon" type="image/png" sizes="16x16" href="{{asset('public/images/favicon-16x16.png')}}">
+	<link rel="apple-touch-icon" sizes="180x180" href="{{asset('public/mages/apple-touch-icon.png')}}"> 
+	<link rel="icon" type="image/png" sizes="16x16" href="{{asset('public/images/circle-cropped.png')}}">
 
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
