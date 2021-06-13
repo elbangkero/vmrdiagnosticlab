@@ -1,28 +1,4 @@
-<div class="header">
-    <div class="header-left">
-        <div class="menu-icon dw dw-menu"></div>
-        <div class="header-search">
-        </div>
-    </div>
-    <div class="header-right">
-        <div class="user-info-dropdown">
-            <div class="dropdown">
-                <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-                    <span class="user-icon">
-                        <img src="vendors/images/photo1.jpg" alt="">
-                    </span>
-                    <span class="user-name">Ross C. Lopez</span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                    <a class="dropdown-item" href="profile.html"><i class="dw dw-user1"></i> Profile</a>
-                    <a class="dropdown-item" href="profile.html"><i class="dw dw-settings2"></i> Setting</a>
-                    <a class="dropdown-item" href="faq.html"><i class="dw dw-help"></i> Help</a>
-                    <a class="dropdown-item" href="login.html"><i class="dw dw-logout"></i> Log Out</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+@include('layouts.admin.admin_header')
 
 <div class="right-sidebar">
     <div class="sidebar-title">
@@ -131,90 +107,131 @@
             <div class="pd-20 card-box mb-30">
                 <div class="clearfix" style="margin-bottom: 50px;">
                     <div class="pull-left">
-                        <h4 class="text-blue h4">Patient Information</h4>
+                        <h4 class="text-blue h4">Personal Information</h4>
                     </div>
                     <div class="pull-right">
                         <a href="{{route('admin_index')}}" class="btn btn-primary btn-sm"><i class="fa fa-angle-left"></i> Go Back</a>
                     </div>
                 </div>
-                <form>
+                @if ($message = Session::get('success'))
+                <div class="alert alert-success">
+                    <p>{{ $message }}</p>
+                </div>
+                @endif
+                <form action="{{ route('insert_patient') }}" method="POST" enctype="multipart/form-data" class="form-horizontal form-label-left">
+                    @csrf
                     <div class="form-group row">
-                        <label class="col-sm-12 col-md-2 col-form-label">Text</label>
+                        <label class="col-sm-12 col-md-2 col-form-label">Name : </label>
                         <div class="col-sm-12 col-md-10">
-                            <input class="form-control" type="text" placeholder="Johnny Brown">
+                            <input class="form-control" name="name" type="text" placeholder="Patient Full Name" required>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-12 col-md-2 col-form-label">Search</label>
-                        <div class="col-sm-12 col-md-10">
-                            <input class="form-control" placeholder="Search Here" type="search">
+                        <label class="col-sm-12 col-md-2 col-form-label">Age : </label>
+                        <div class="col-sm-1 col-md-1">
+                            <input class="form-control" name="age" type="text" placeholder="age">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-12 col-md-2 col-form-label">Email</label>
+                        <label class="col-sm-12 col-md-2 col-form-label">Gender : </label>
                         <div class="col-sm-12 col-md-10">
-                            <input class="form-control" value="bootstrap@example.com" type="email">
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-outline-secondary">
+                                    <input type="radio" name="gender" value="male" autocomplete="off"> Male
+                                </label>
+                                <label class="btn btn-outline-secondary">
+                                    <input type="radio" name="gender" value="female" autocomplete="off"> Female
+                                </label>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-12 col-md-2 col-form-label">URL</label>
-                        <div class="col-sm-12 col-md-10">
-                            <input class="form-control" value="https://getbootstrap.com" type="url">
+                        <label class="col-sm-12 col-md-2 col-form-label">Birthdate : </label>
+                        <div class="col-sm-2 col-md-2">
+                            <input class="form-control date-picker" name="birthday" placeholder="Select Date" type="text">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-12 col-md-2 col-form-label">Telephone</label>
+                        <label class="col-sm-12 col-md-2 col-form-label">Address : </label>
                         <div class="col-sm-12 col-md-10">
-                            <input class="form-control" value="1-(111)-111-1111" type="tel">
+                            <input class="form-control" type="text" name="address" placeholder="address">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-12 col-md-2 col-form-label">Password</label>
+                        <label class="col-sm-12 col-md-2 col-form-label">Hospital/Patient_id : </label>
                         <div class="col-sm-12 col-md-10">
-                            <input class="form-control" value="password" type="password">
+                            <input class="form-control" type="text" name="patient_id" placeholder="patient id">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-12 col-md-2 col-form-label">Number</label>
+                        <label class="col-sm-12 col-md-2 col-form-label">Specimen No : </label>
                         <div class="col-sm-12 col-md-10">
-                            <input class="form-control" value="100" type="number">
+                            <input class="form-control" type="text" name="specimen_no" placeholder="specimen no">
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="example-datetime-local-input" class="col-sm-12 col-md-2 col-form-label">Date and time</label>
-                        <div class="col-sm-12 col-md-10">
-                            <input class="form-control datetimepicker" placeholder="Choose Date anf time" type="text">
+            </div>
+            <!-- Default Basic Forms End -->
+            <!-- Default Basic Forms Start -->
+            <div class="pd-20 card-box mb-30">
+                <div class="clearfix" style="margin-bottom: 50px;">
+                    <div class="pull-left">
+                        <h4 class="text-blue h4">Test Result</h4>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-12 col-md-2 col-form-label">Test Result : </label>
+                    <div class="col-sm-12 col-md-10">
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-outline-secondary">
+                                <input type="radio" name="test_result" value="positive" autocomplete="off" required> Positive
+                            </label>
+                            <label class="btn btn-outline-secondary">
+                                <input type="radio" name="test_result" value="negative" autocomplete="off"> Negative
+                            </label>
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label class="col-sm-12 col-md-2 col-form-label">Date</label>
-                        <div class="col-sm-12 col-md-10">
-                            <input class="form-control date-picker" placeholder="Select Date" type="text">
-                        </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-12 col-md-2 col-form-label">Remarks : </label>
+                    <div class="col-sm-12 col-md-10">
+                        <input class="form-control" type="text" name="remarks" placeholder="remarks">
                     </div>
-                    <div class="form-group row">
-                        <label class="col-sm-12 col-md-2 col-form-label">Month</label>
-                        <div class="col-sm-12 col-md-10">
-                            <input class="form-control month-picker" placeholder="Select Month" type="text">
-                        </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-12 col-md-2 col-form-label">Date Requested : </label>
+                    <div class="col-sm-2 col-md-2">
+                        <input class="form-control date-picker" name="date_requested" placeholder="Select Date" type="text">
                     </div>
-                    <div class="form-group row">
-                        <label class="col-sm-12 col-md-2 col-form-label">Time</label>
-                        <div class="col-sm-12 col-md-10">
-                            <input class="form-control time-picker" placeholder="Select time" type="text">
-                        </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-12 col-md-2 col-form-label">Date Received : </label>
+                    <div class="col-sm-2 col-md-2">
+                        <input class="form-control date-picker" name="date_received" placeholder="Select Date" type="text">
                     </div>
-                    <div class="form-group row">
-                        <label class="col-sm-12 col-md-2 col-form-label">Select</label>
-                        <div class="col-sm-12 col-md-10">
-                            <select class="custom-select col-12">
-                                <option selected="">Choose...</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-12 col-md-2 col-form-label">Date of Specimen Collection : </label>
+                    <div class="col-sm-2 col-md-2">
+                        <input class="form-control date-picker" name="date_collection" placeholder="Select Date" type="text">
                     </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-12 col-md-2 col-form-label">Specimen Type : </label>
+                    <div class="col-sm-12 col-md-10">
+                        <input class="form-control" type="text" name="specimen_type" placeholder="specimen type">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-12 col-md-2 col-form-label">Laboratory Test Performed : </label>
+                    <div class="col-sm-12 col-md-10">
+                        <input class="form-control" type="text" name="test_perform" placeholder="test perform">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div style="float:right" class="offset-6">
+                        <button type="submit" class="btn btn-success btn-sm">Submit</button>
+                    </div>
+                </div>
                 </form>
             </div>
             <!-- Default Basic Forms End -->

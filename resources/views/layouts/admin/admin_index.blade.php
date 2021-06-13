@@ -1,28 +1,4 @@
-<div class="header">
-	<div class="header-left">
-		<div class="menu-icon dw dw-menu"></div>
-		<div class="header-search">
-		</div>
-	</div>
-	<div class="header-right">
-		<div class="user-info-dropdown">
-			<div class="dropdown">
-				<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-					<span class="user-icon">
-						<img src="vendors/images/photo1.jpg" alt="">
-					</span>
-					<span class="user-name">Ross C. Lopez</span>
-				</a>
-				<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-					<a class="dropdown-item" href="profile.html"><i class="dw dw-user1"></i> Profile</a>
-					<a class="dropdown-item" href="profile.html"><i class="dw dw-settings2"></i> Setting</a>
-					<a class="dropdown-item" href="faq.html"><i class="dw dw-help"></i> Help</a>
-					<a class="dropdown-item" href="login.html"><i class="dw dw-logout"></i> Log Out</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+@include('layouts.admin.admin_header')
 <div class="right-sidebar">
 	<div class="sidebar-title">
 		<h3 class="weight-600 font-16 text-blue">
@@ -152,26 +128,29 @@
 		<div class="pd-20">
 
 			<a style="float:right" class="btn btn-primary btn-sm" href="{{route('add_patient')}}" role="button"><span class="fa fa-plus"></span> Add Patient</a>
-			<h4 class="text-blue h4">Data Table Simple</h4>
+			<h4 class="text-blue h4">Patient List</h4>
 		</div>
 		<div class="pb-20">
 			<table class="data-table table stripe hover nowrap">
 				<thead>
 					<tr>
+						<th>Patient ID</th>
 						<th class="table-plus datatable-nosort">Name</th>
 						<th>Age</th>
-						<th>Office</th>
-						<th>Address</th>
-						<th>Start Date</th>
+						<th>Gender</th>
+						<th>Test Result</th>
+						<th>Date of Specimen Collection :</th>
 						<th class="datatable-nosort">Action</th>
 					</tr>
 				</thead>
 				<tbody>
+					@foreach($patient_list as $list)
 					<tr>
-						<td class="table-plus">Gloria F. Mead</td>
+						<td>{{$list->id}}</td>
+						<td class="table-plus">{{$list->name}}</td>
 						<td>25</td>
-						<td>Sagittarius</td>
-						<td>2829 Trainer Avenue Peoria, IL 61602 </td>
+						<td>Male</td>
+						<td>positive</td>
 						<td>29-03-2018</td>
 						<td>
 							<div class="table-actions">
@@ -180,161 +159,8 @@
 								<a href="#" data-color="#e95959"><i class="icon-copy dw dw-delete-3"></i></a>
 							</div>
 						</td>
-					</tr>
-					<tr>
-						<td class="table-plus">Andrea J. Cagle</td>
-						<td>30</td>
-						<td>Gemini</td>
-						<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
-						<td>29-03-2018</td>
-						<td>
-							<div class="table-actions">
-								<a href=""><i class="icon-copy fa fa-download" aria-hidden="true" style="color:green"></i></a>
-								<a href="#" data-color="#265ed7"><i class="icon-copy dw dw-edit2"></i></a>
-								<a href="#" data-color="#e95959"><i class="icon-copy dw dw-delete-3"></i></a>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td class="table-plus">Andrea J. Cagle</td>
-						<td>20</td>
-						<td>Gemini</td>
-						<td>2829 Trainer Avenue Peoria, IL 61602 </td>
-						<td>29-03-2018</td>
-						<td>
-							<div class="table-actions">
-								<a href=""><i class="icon-copy fa fa-download" aria-hidden="true" style="color:green"></i></a>
-								<a href="#" data-color="#265ed7"><i class="icon-copy dw dw-edit2"></i></a>
-								<a href="#" data-color="#e95959"><i class="icon-copy dw dw-delete-3"></i></a>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td class="table-plus">Andrea J. Cagle</td>
-						<td>30</td>
-						<td>Sagittarius</td>
-						<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
-						<td>29-03-2018</td>
-						<td>
-							<div class="table-actions">
-								<a href=""><i class="icon-copy fa fa-download" aria-hidden="true" style="color:green"></i></a>
-								<a href="#" data-color="#265ed7"><i class="icon-copy dw dw-edit2"></i></a>
-								<a href="#" data-color="#e95959"><i class="icon-copy dw dw-delete-3"></i></a>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td class="table-plus">Andrea J. Cagle</td>
-						<td>25</td>
-						<td>Gemini</td>
-						<td>2829 Trainer Avenue Peoria, IL 61602 </td>
-						<td>29-03-2018</td>
-						<td>
-							<div class="table-actions">
-								<a href=""><i class="icon-copy fa fa-download" aria-hidden="true" style="color:green"></i></a>
-								<a href="#" data-color="#265ed7"><i class="icon-copy dw dw-edit2"></i></a>
-								<a href="#" data-color="#e95959"><i class="icon-copy dw dw-delete-3"></i></a>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td class="table-plus">Andrea J. Cagle</td>
-						<td>20</td>
-						<td>Sagittarius</td>
-						<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
-						<td>29-03-2018</td>
-						<td>
-							<div class="table-actions">
-								<a href=""><i class="icon-copy fa fa-download" aria-hidden="true" style="color:green"></i></a>
-								<a href="#" data-color="#265ed7"><i class="icon-copy dw dw-edit2"></i></a>
-								<a href="#" data-color="#e95959"><i class="icon-copy dw dw-delete-3"></i></a>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td class="table-plus">Andrea J. Cagle</td>
-						<td>18</td>
-						<td>Gemini</td>
-						<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
-						<td>29-03-2018</td>
-						<td>
-							<div class="table-actions">
-								<a href=""><i class="icon-copy fa fa-download" aria-hidden="true" style="color:green"></i></a>
-								<a href="#" data-color="#265ed7"><i class="icon-copy dw dw-edit2"></i></a>
-								<a href="#" data-color="#e95959"><i class="icon-copy dw dw-delete-3"></i></a>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td class="table-plus">Andrea J. Cagle</td>
-						<td>30</td>
-						<td>Sagittarius</td>
-						<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
-						<td>29-03-2018</td>
-						<td>
-							<div class="table-actions">
-								<a href=""><i class="icon-copy fa fa-download" aria-hidden="true" style="color:green"></i></a>
-								<a href="#" data-color="#265ed7"><i class="icon-copy dw dw-edit2"></i></a>
-								<a href="#" data-color="#e95959"><i class="icon-copy dw dw-delete-3"></i></a>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td class="table-plus">Andrea J. Cagle</td>
-						<td>30</td>
-						<td>Sagittarius</td>
-						<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
-						<td>29-03-2018</td>
-						<td>
-							<div class="table-actions">
-								<a href=""><i class="icon-copy fa fa-download" aria-hidden="true" style="color:green"></i></a>
-								<a href="#" data-color="#265ed7"><i class="icon-copy dw dw-edit2"></i></a>
-								<a href="#" data-color="#e95959"><i class="icon-copy dw dw-delete-3"></i></a>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td class="table-plus">Andrea J. Cagle</td>
-						<td>30</td>
-						<td>Gemini</td>
-						<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
-						<td>29-03-2018</td>
-						<td>
-							<div class="table-actions">
-								<a href=""><i class="icon-copy fa fa-download" aria-hidden="true" style="color:green"></i></a>
-								<a href="#" data-color="#265ed7"><i class="icon-copy dw dw-edit2"></i></a>
-								<a href="#" data-color="#e95959"><i class="icon-copy dw dw-delete-3"></i></a>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td class="table-plus">Andrea J. Cagle</td>
-						<td>30</td>
-						<td>Gemini</td>
-						<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
-						<td>29-03-2018</td>
-						<td>
-							<div class="table-actions">
-								<a href=""><i class="icon-copy fa fa-download" aria-hidden="true" style="color:green"></i></a>
-								<a href="#" data-color="#265ed7"><i class="icon-copy dw dw-edit2"></i></a>
-								<a href="#" data-color="#e95959"><i class="icon-copy dw dw-delete-3"></i></a>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td class="table-plus">Andrea J. Cagle</td>
-						<td>30</td>
-						<td>Gemini</td>
-						<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
-						<td>29-03-2018</td>
-						<td>
-							<div class="table-actions">
-								<a href=""><i class="icon-copy fa fa-download" aria-hidden="true" style="color:green"></i></a>
-								<a href="#" data-color="#265ed7"><i class="icon-copy dw dw-edit2"></i></a>
-								<a href="#" data-color="#e95959"><i class="icon-copy dw dw-delete-3"></i></a>
-							</div>
-						</td>
-					</tr>
+					</tr> 
+					@endforeach
 				</tbody>
 			</table>
 		</div>
