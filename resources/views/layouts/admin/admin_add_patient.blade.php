@@ -158,9 +158,9 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-12 col-md-2 col-form-label">Hospital/Patient_id : </label>
+                        <label class="col-sm-12 col-md-2 col-form-label">Patient Control Number: </label>
                         <div class="col-sm-12 col-md-10">
-                            <input class="form-control" type="text" name="patient_id" placeholder="patient id">
+                            <input class="form-control" type="text" name="patient_id" placeholder="control number">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -194,7 +194,7 @@
                 <div class="form-group row">
                     <label class="col-sm-12 col-md-2 col-form-label">Remarks : </label>
                     <div class="col-sm-12 col-md-10">
-                        <input class="form-control" type="text" name="remarks" placeholder="remarks">
+                        <input class="form-control" type="text" name="remarks" placeholder="remarks" value="This Laboratory result should be interpreted in correlation with clinical data" disabled>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -217,14 +217,14 @@
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-12 col-md-2 col-form-label">Specimen Type : </label>
-                    <div class="col-sm-12 col-md-10">
-                        <input class="form-control" type="text" name="specimen_type" placeholder="specimen type">
+                    <div class="col-sm-2 col-md-2">
+                        <input class="form-control" type="text" name="specimen_type" placeholder="specimen type" value="OPS & NPS" disabled>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-12 col-md-2 col-form-label">Laboratory Test Performed : </label>
-                    <div class="col-sm-12 col-md-10">
-                        <input class="form-control" type="text" name="test_perform" placeholder="test perform">
+                    <div class="col-sm-6 col-md-6">
+                        <input class="form-control" type="text" name="test_perform" placeholder="test perform" value="SARS-CoV-2 (causative agent of COVID-19) virus detection by Real-Time Polymerase Chain Reaction" disabled>
                     </div>
                 </div>
                 <div class="form-group row">

@@ -1,3 +1,4 @@
+<div class="bg" ></div>
  <div class="login-wrap d-flex align-items-center flex-wrap justify-content-center">
      <div class="container">
          <div class="row align-items-center">
