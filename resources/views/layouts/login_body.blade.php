@@ -8,7 +8,7 @@
                          <h5 style="text-align:center" class="text-primary">Login to</h5><br>
                          <h5 class="text-center text-primary">VMR Diagnostic Lab</h5><br>
 
-                         <img style="margin-left:43%;max-height:50px;max-width:50px;text-align:center" src="{{asset('public/images/circle-cropped.png')}}" alt="">
+                         <img style="margin-left:43%;max-height:50px;max-width:50px;text-align:center" src="{{asset('public/images/circle-cropped.jpg')}}" alt="">
                      </div>
                      <form method="POST" action="{{ route('login') }}">
                          @csrf
