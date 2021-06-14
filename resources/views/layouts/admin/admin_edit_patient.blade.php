@@ -117,13 +117,13 @@
                 <div class="form-group row">
                     <label class="col-sm-12 col-md-2 col-form-label">Date of Specimen Collection : </label>
                     <div class="col-sm-2 col-md-2">
-                        <input class="form-control date-picker" name="date_collection" placeholder="Select Date" type="text" value="{{$patient->date_collection}}">
+                        <input class="form-control datetimepicker" name="date_collection" placeholder="Select Date" type="text" value="{{$patient->date_collection}}">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-sm-12 col-md-2 col-form-label">Specimen Type : </label>
+                    <label class="col-sm-12 col-md-2 col-form-label">Date of Release : </label>
                     <div class="col-sm-2 col-md-2">
-                        <input class="form-control" type="text" name="specimen_type" placeholder="specimen type" value="OPS & NPS" disabled>
+                        <input class="form-control datetimepicker" name="date_release" placeholder="Select Date" type="text" value="{{$patient->date_release}}">
                     </div>
                 </div>
                 <div class="form-group row">

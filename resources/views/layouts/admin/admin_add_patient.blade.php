@@ -116,7 +116,13 @@
                 <div class="form-group row">
                     <label class="col-sm-12 col-md-2 col-form-label">Date of Specimen Collection : </label>
                     <div class="col-sm-2 col-md-2">
-                        <input class="form-control date-picker" name="date_collection" placeholder="Select Date" type="text">
+                        <input class="form-control datetimepicker" name="date_collection" placeholder="Select Date" type="text">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-12 col-md-2 col-form-label">Date of Release : </label>
+                    <div class="col-sm-2 col-md-2">
+                        <input class="form-control datetimepicker" name="date_release" placeholder="Select Date" type="text">
                     </div>
                 </div>
                 <div class="form-group row">

@@ -93,6 +93,11 @@
                         <span class="micon dw dw-house-1"></span><span class="mtext">Home</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('mng_admin')}}" class="dropdown-toggle no-arrow">
+                        <span  class="micon dw dw-user-13"></span><span class="mtext">Administrator</span>
+                    </a>
+                </li> 
             </ul>
         </div>
     </div>
