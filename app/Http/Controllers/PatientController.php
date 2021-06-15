@@ -11,7 +11,11 @@ class PatientController extends Controller
         $show_result = DB::table('covid_info')
         ->where('id',$id)
         ->get();
+
+        $exists = DB::table('covid_info')
+        ->where('id',$id)
+        ->first();
         
-        return view('patient.index',compact('show_result'));
+        return view('patient.index',compact('show_result','exists'));
     }
 }

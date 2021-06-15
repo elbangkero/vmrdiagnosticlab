@@ -64,15 +64,8 @@ class RedirectController extends Controller
         return back()->with('success', 'Your Data has been Inserted');
     }
     public function delete_patient(Request $request, $id)
-    {
-
-        $update = [
-            'is_delete' => '1',
-        ];
-        DB::table('covid_info')
-            ->where('id', $id)
-            ->update($update);
-
+    { 
+        DB::table('covid_info')->where('id', '=', $id)->delete();
         return back()->with('delete', 'Your Data has been Deleted');
     }
     public function edit_patient(Request $request, $id)
